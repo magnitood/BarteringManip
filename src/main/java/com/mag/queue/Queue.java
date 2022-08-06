@@ -22,7 +22,7 @@ public class Queue implements ModInitializer {
         System.out.println(Minecraft.getInstance().getVersionType());
         barteringStack.add(Trades.CRYING_OBSIDIAN.barterItem);
         barteringStack.add(Trades.IRON_NUGGET.barterItem);
-        barteringStack.add(Trades.WATER_BOTTLE.barterItem);
+        barteringStack.add(Trades.ENDER_PEARL.barterItem);
         stackCounter = barteringStack.iterator();
     }
 }
