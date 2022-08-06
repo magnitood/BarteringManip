@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.mag.queue.Mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBarterInjection"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
