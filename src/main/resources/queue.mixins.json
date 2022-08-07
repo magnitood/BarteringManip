@@ -4,7 +4,8 @@
   "package": "com.mag.queue.Mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinBarterInjection"
+    "MixinBarterInjection",
+    "MixinCommandRegistration"
   ],
   "client": [
   ],
