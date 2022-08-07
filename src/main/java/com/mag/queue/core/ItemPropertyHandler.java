@@ -1,5 +1,6 @@
 package com.mag.queue.core;
 
+import com.mag.queue.Queue;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -11,7 +12,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.Collections;
 
-public abstract class ItemPropertyHandler {
+public class ItemPropertyHandler {
 
     public static ItemStack SOUL_SPEED_BOOK ;
     public static ItemStack SOUL_SPEED_BOOTS = new ItemStack(Items.IRON_BOOTS);
@@ -25,5 +26,6 @@ public abstract class ItemPropertyHandler {
         WATER_BOTTLE = PotionUtils.setPotion(WATER_BOTTLE, Potions.WATER);
         POTION_OF_FIRE_RESISTANCE = PotionUtils.setPotion(POTION_OF_FIRE_RESISTANCE, Potions.FIRE_RESISTANCE);
         SPLASH_POTION_OF_FIRE_RESISTANCE = PotionUtils.setPotion(SPLASH_POTION_OF_FIRE_RESISTANCE, Potions.FIRE_RESISTANCE);
+        Queue.LOGGER.info("Complex Items Registered");
     }
 }
