@@ -1,1 +1,3 @@
 src/main/java/com/mag/queue/core/Trades.java merge=ours
+build.gradle merge=ours
+gradle.properties merge=ours
