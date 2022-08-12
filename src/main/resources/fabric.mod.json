@@ -9,11 +9,11 @@
   ],
   "contact": {},
   "license": "GPL-3.0",
-  "icon": "assests/queue/icon.png",
+  "icon": "assets/queue/icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [
-      "com.mag.queue.Queue"
+      "com.mag.queuemod.Queue"
     ]
   },
   "mixins": [
