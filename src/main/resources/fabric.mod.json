@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "queue",
+  "id": "queuemod",
   "version": "${version}",
-  "name": "Queue",
+  "name": "Bartering Manip",
   "description": "Mod to manipulate piglin bartering",
   "authors": [
     "MaGNITud3"
   ],
   "contact": {},
   "license": "GPL-3.0",
-  "icon": "assests/queue/icon.png",
+  "icon": "assets/queue/icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [
-      "com.mag.queue.Queue"
+      "com.mag.queuemod.Queue"
     ]
   },
   "mixins": [
