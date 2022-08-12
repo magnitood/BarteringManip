@@ -20,7 +20,6 @@
     "queue.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.8",
-    "minecraft": "1.16.1"
+    "fabricloader": ">=0.14.8"
   }
 }
