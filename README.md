@@ -5,7 +5,7 @@ Minecraft mod to manipulate piglin bartering
 
 
 ### General Syntax
-```
+```mcfunction
 /bartering_queue <option> [arguments]
 ```
 
@@ -24,21 +24,29 @@ show - prints the queue in the console
 ### Examples
 
 #### adds 2 ender pearl trade to the queue
-```
+```mcfunction
 /bartering_queue add ender_pearl 2 
 ```
 
 #### adds 1 enchanted book of soul speed 3 trade to the queue
-```
+```mcfunction
 /bartering_queue add soul_speed_book
 ```
 
 #### adds 10 obsidian trade to the queue
-```
+```mcfunction
 /bartering_queue add obsidian 10
 ```
 
 #### clears the queue
-```
+```mcfunction
 /bartering_queue clear
 ```
+
+## Bugs/Issues/Troubleshooting
+
+If there are any bugs or you need help with the mod, you can do any of the following:
+
+1. You can open a new [#issue](https://github.com/MaG-NITud3/BarteringManip/issues/new)
+2. Send message in #tas-related-halp in the TAS Discord
+3. Message me on Discord at MaG_NITud3#9311
