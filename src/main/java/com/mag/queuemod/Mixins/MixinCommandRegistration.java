@@ -1,6 +1,6 @@
-package com.mag.queue.Mixins;
+package com.mag.queuemod.Mixins;
 
-import com.mag.queue.core.BarteringQueueCommand;
+import com.mag.queuemod.core.BarteringQueueCommand;
 import com.mojang.brigadier.AmbiguityConsumer;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
