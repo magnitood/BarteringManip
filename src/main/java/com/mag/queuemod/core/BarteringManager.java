@@ -23,7 +23,10 @@ public class BarteringManager {
     public static int stackSize(){
         return barteringTradeQueue.size();
     }
-    public static List<ItemStack> getTrade(int index){
+    public static Trades getTrade(int index){
+        return barteringTradeQueue.get(index);
+    }
+    public static List<ItemStack> getTradeAsList(int index){
         Trades trade = barteringTradeQueue.get(index);
         switch(trade){
             case POTION_OF_FIRE_RESISTANCE, SPLASH_POTION_OF_FIRE_RESISTANCE, SOUL_SPEED_BOOK, SOUL_SPEED_BOOTS -> {

@@ -19,7 +19,7 @@ public abstract class MixinBarterInjection {
     private static void injectItemStack(Piglin piglin, CallbackInfoReturnable<List<ItemStack>> cir){
         int index = BarteringManager.getCounter();
         if(index < BarteringManager.stackSize() && BarteringManager.isBarteringEnabled()){
-            cir.setReturnValue(BarteringManager.getTrade(index));
+            cir.setReturnValue(BarteringManager.getTradeAsList(index));
             BarteringManager.incrementCounter();
             Queue.LOGGER.info("Injected Barter Item");
         }
