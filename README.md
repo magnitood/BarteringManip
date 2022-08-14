@@ -43,12 +43,22 @@ show - prints the queue in the console
 /bartering_queue clear
 ```
 
+#### prints the current queue in the chat
+```
+/bartering_queue show
+```
+
+#### resets the queue
+```
+/bartering_queue reset
+```
+
 ## Bugs/Issues/Troubleshooting
 
 If there are any bugs or you need help with the mod, you can do any of the following:
 
 1. You can open a new [#issue](https://github.com/MaG-NITud3/BarteringManip/issues/new)
-2. Send message in #tas-related-halp in the TAS Discord
+2. Send message in #tas-related-halp in the [TAS Discord](https://discord.gg/jGhNxpd)
 3. Message me on Discord at MaG_NITud3#9311
 
 ## Feature Requests
