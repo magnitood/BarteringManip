@@ -9,6 +9,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+/**
+ * Mixin to register the bartering queue command
+ */
 @Mixin(Commands.class)
 public abstract class MixinCommandRegistration {
     @Redirect( at = @At( value = "INVOKE", target = "Lnet/minecraft/server/commands/ExecuteCommand;register(Lcom/mojang/brigadier/CommandDispatcher;)V") , method = "<init>")
