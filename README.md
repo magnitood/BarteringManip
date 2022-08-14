@@ -50,3 +50,7 @@ If there are any bugs or you need help with the mod, you can do any of the follo
 1. You can open a new [#issue](https://github.com/MaG-NITud3/BarteringManip/issues/new)
 2. Send message in #tas-related-halp in the TAS Discord
 3. Message me on Discord at MaG_NITud3#9311
+
+## Feature Requests
+
+Although this a very simple and basic mod, if you have any feature request in mind that may help improve this mod, you can DM them to me in Discord at MaG_NITud3#9311
