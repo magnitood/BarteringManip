@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "queue",
   "version": "${version}",
-  "name": "Queue",
+  "name": "Bartering Manip",
   "description": "Mod to manipulate piglin bartering",
   "authors": [
     "MaGNITud3"
