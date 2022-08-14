@@ -12,6 +12,9 @@ import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.Collections;
 
+/**
+ * Enum to store the ItemStack and string name (for commands) of each possible trade
+ */
 public enum Trades {
     ENDER_PEARL(new ItemStack(Items.ENDER_PEARL, 8), "ender_pearl"),
     OBSIDIAN(new ItemStack(Items.OBSIDIAN),  "obsidian"),
@@ -38,6 +41,9 @@ public enum Trades {
         this.name = name;
     }
 
+    /**
+     * Class to initialise some complex enchanted and potion ItemStacks
+     */
     private static class ComplexItemStack {
 
         public static ItemStack SOUL_SPEED_BOOK;

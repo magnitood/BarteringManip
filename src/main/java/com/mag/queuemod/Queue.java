@@ -5,6 +5,9 @@ import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Entry point class, nothing much going on here, main magic happens in BarteringManager and MixinBarterInjection
+ */
 public class Queue implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("Bartering Manip");
 
