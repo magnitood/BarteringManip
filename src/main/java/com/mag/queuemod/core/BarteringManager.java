@@ -6,6 +6,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,14 +39,16 @@ public class BarteringManager {
         //Thanks to Scribble for this idea.
         Trades trade = barteringTradeQueue.get(index);
         switch(trade){
-            case POTION_OF_FIRE_RESISTANCE, SPLASH_POTION_OF_FIRE_RESISTANCE, SOUL_SPEED_BOOK, SOUL_SPEED_BOOTS -> {
-                return List.of(trade.barterItem);
-            }
-            default -> {
+//            case POTION_OF_FIRE_RESISTANCE, SPLASH_POTION_OF_FIRE_RESISTANCE, SOUL_SPEED_BOOK, SOUL_SPEED_BOOTS:
+            case POTION_OF_FIRE_RESISTANCE:
+            case SPLASH_POTION_OF_FIRE_RESISTANCE:
+            case SOUL_SPEED_BOOTS:
+            case SOUL_SPEED_BOOK:
+                return Collections.singletonList(trade.barterItem);
+            default:
                 Item tradeItem = trade.barterItem.getItem();
                 int count = trade.barterItem.getCount();
-                return List.of(new ItemStack(tradeItem, count));
-            }
+                return Collections.singletonList(new ItemStack(tradeItem, count));
         }
     }
     public static void incrementCounter(){
