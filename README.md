@@ -13,7 +13,7 @@ Minecraft mod to manipulate piglin bartering
 
 add - adds item (for example Ender Pearl) to the bartering queue. Optionally integer argument (n) can be passed to add the item n times
 
-clear - clears the queue
+reset - resets the queue
 
 enable - enables the queue
 
