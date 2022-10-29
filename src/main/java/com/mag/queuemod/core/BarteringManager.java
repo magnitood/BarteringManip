@@ -204,6 +204,9 @@ public class BarteringManager {
 			return;
 		}
     	
+    	barteringTradeQueue.clear();
+    	finishedTradeQueue.clear();
+    	
     	for(String line : lines) {
     		Trades trade = Trades.fromString(line);
     		if(trade==null)
