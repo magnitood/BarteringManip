@@ -19,20 +19,20 @@ public class BarteringQueueCommand {
         }
         commandDispatcher.register(Commands.literal("bartering_queue")
                 .then(
-                        Commands.literal("enable")
+                        Commands.literal("toggle")
                                 .executes(
-                                        BarteringQueueCommand::enableQueue
+                                        BarteringQueueCommand::toggle
                                 )
                 )
         );
-        commandDispatcher.register(Commands.literal("bartering_queue")
-                .then(
-                        Commands.literal("disable")
-                                .executes(
-                                        BarteringQueueCommand::disableQueue
-                                )
-                )
-        );
+//        commandDispatcher.register(Commands.literal("bartering_queue")
+//                .then(
+//                        Commands.literal("disable")
+//                                .executes(
+//                                        BarteringQueueCommand::disableQueue
+//                                )
+//                )
+//        );
         commandDispatcher.register(Commands.literal("bartering_queue")
                 .then(
                         Commands.literal("reset")
@@ -79,35 +79,40 @@ public class BarteringQueueCommand {
     }
 
     /**
-     * Enables the queue
+     * Toggles the queue
      */
-    private static int enableQueue(CommandContext<CommandSourceStack> context){
-        BarteringManager.setBarteringEnabled(true);
-        Queue.LOGGER.info("Bartering Queue has been enabled");
-        sendChatMessage(context, ChatFormatting.DARK_AQUA+"Bartering Queue is "+ChatFormatting.GREEN+"Enabled");
+    private static int toggle(CommandContext<CommandSourceStack> context){
+    	boolean newState = !BarteringManager.isBarteringEnabled();
+        BarteringManager.setBarteringEnabled(newState);
+        Queue.LOGGER.info("Bartering Queue has been {}", newState? "enabled":"disabled");
+        sendChatMessage(context, String.format(ChatFormatting.DARK_AQUA+"Bartering Queue is %s", newState ? ChatFormatting.GREEN+"Enabled" : ChatFormatting.RED+"Disabled"));
         return 1;
     }
 
-    /**
-     * Disables the queue
-     */
-    private static int disableQueue(CommandContext<CommandSourceStack> context){
-        BarteringManager.setBarteringEnabled(false);
-        Queue.LOGGER.info("Bartering Queue has been disabled");
-        sendChatMessage(context, ChatFormatting.DARK_AQUA+"Bartering Queue is "+ChatFormatting.RED+"Disabled");
-        return 1;
-    }
+//    /**
+//     * Disables the queue
+//     */
+//    private static int disableQueue(CommandContext<CommandSourceStack> context){
+//        BarteringManager.setBarteringEnabled(false);
+//        Queue.LOGGER.info("Bartering Queue has been disabled");
+//        sendChatMessage(context, ChatFormatting.DARK_AQUA+"Bartering Queue is "+ChatFormatting.RED+"Disabled");
+//        return 1;
+//    }
 
     /**
      * Adds trade to the queue
      */
     private static int addBarteringItem(CommandContext<CommandSourceStack> context, Trades trade, int i){
+    	if(i<=0) {
+    		context.getSource().sendFailure(new TextComponent("The number of trades should be at least 1"));
+    		return 0;
+    	}
         for (int j=0; j<i; j++) {
             Queue.LOGGER.info("trying to add item");
             BarteringManager.addTrade(trade);
             Queue.LOGGER.info("added "+trade.barterItem.toString());
         }
-        sendChatMessage(context, ChatFormatting.DARK_AQUA+"Added "+ChatFormatting.DARK_PURPLE+ i +ChatFormatting.DARK_PURPLE+" "+trade.barterItem.getItem().toString()+" trade(s)"+ChatFormatting.DARK_AQUA+ " to the queue");
+        sendChatMessage(context, ChatFormatting.DARK_AQUA+"Added "+ChatFormatting.DARK_PURPLE+ i +ChatFormatting.DARK_PURPLE+" "+trade.barterItem.getItem().toString()+" trade"+ (i>1?"s":"") +ChatFormatting.DARK_AQUA+ " to the queue");
         return 1;
     }
 
@@ -129,17 +134,7 @@ public class BarteringQueueCommand {
             sendChatMessage(context, ChatFormatting.DARK_AQUA+"The queue is empty");
             return 1;
         }
-        sendChatMessage(context, ChatFormatting.DARK_PURPLE+"Trading Queue:");
-        for(int i = 0; i< BarteringManager.getCounter(); i++){
-            Trades finishedTrades = BarteringManager.getTrade(i);
-            sendChatMessage(context, i + 1 +". "+ChatFormatting.RED+finishedTrades.barterItem.getItem().toString());
-        }
-        Trades nextTrade = BarteringManager.getTrade(BarteringManager.getCounter());
-        sendChatMessage(context, BarteringManager.getCounter() + 1 +". "+ChatFormatting.DARK_AQUA+nextTrade.barterItem.getItem().toString()+ChatFormatting.YELLOW+" \u21E0 Next Trade");
-        for(int i = BarteringManager.getCounter()+1; i< BarteringManager.getQueueSize(); i++){
-            Trades upcommingTrades = BarteringManager.getTrade(i);
-            sendChatMessage(context, i + 1 +". "+ChatFormatting.GREEN+upcommingTrades.barterItem.getItem().toString());
-        }
+        sendChatMessage(context, BarteringManager.finishedQueueToString()+BarteringManager.barterQueueToString());
         return 1;
     }
 

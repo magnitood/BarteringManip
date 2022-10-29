@@ -13,18 +13,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 /**
- * Mixin to inject Trade from the bartering queue into the loot generation method in PiglinAi.class
+ * Mixin to inject Trade from the bartering queue into the loot generation
+ * method in PiglinAi.class
  */
 @Mixin(PiglinAi.class)
 public abstract class MixinBarterInjection {
 
-    @Inject( at = @At("RETURN"), method = "getBarterResponseItems", cancellable = true)
-    private static void injectItemStack(Piglin piglin, CallbackInfoReturnable<List<ItemStack>> cir){
-        int index = BarteringManager.getCounter();
-        if(index < BarteringManager.getQueueSize() && BarteringManager.isBarteringEnabled()){
-            cir.setReturnValue(BarteringManager.getTradeAsList(index));
-            BarteringManager.incrementCounter();
-            Queue.LOGGER.info("Injected Barter Item");
-        }
-    }
+	@Inject(at = @At("RETURN"), method = "getBarterResponseItems", cancellable = true)
+	private static void injectItemStack(Piglin piglin, CallbackInfoReturnable<List<ItemStack>> cir) {
+		List<ItemStack> injectedItem = BarteringManager.getTradeAsList();
+		if (injectedItem != null) {
+			cir.setReturnValue(injectedItem);
+			Queue.LOGGER.info("Injected Barter Item: {}", injectedItem.get(0));
+		}
+	}
 }

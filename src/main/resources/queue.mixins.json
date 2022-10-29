@@ -5,7 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinBarterInjection",
-    "MixinCommandRegistration"
+    "MixinCommandRegistration",
+    
+    "MixinMinecraftServer",	// Used for events on the server side
+    "AccessorLevelStorage"	// Used for getting the name of the world folder
+    
   ],
   "client": [
   ],
