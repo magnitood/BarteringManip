@@ -65,4 +65,18 @@ public enum Trades {
             Queue.LOGGER.info("Complex Items Loaded");
         }
     }
+    
+    @Override
+    public String toString() {
+    	return name;
+    }
+    
+    public static Trades fromString(String name) {
+    	for (Trades trade : values()) {
+			if(trade.name.equals(name)) {
+				return trade;
+			}
+		}
+    	return null;
+    }
 }
