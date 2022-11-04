@@ -17,5 +17,4 @@ public class Queue implements ModInitializer {
         LOGGER.info("Bartering Manip Mod Initialised");
         LOGGER.info("Bartering Queue is enabled");
     }
-    
 }

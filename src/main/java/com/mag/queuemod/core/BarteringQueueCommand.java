@@ -14,8 +14,11 @@ import net.minecraft.network.chat.TextComponent;
  */
 public class BarteringQueueCommand {
     public static void register(CommandDispatcher<CommandSourceStack> commandDispatcher){
-        for(int i=0; i<Trades.values().length; i++){
-            registerTradeOptions(commandDispatcher, Trades.values()[i]);
+        Trades[] trades = Trades.values();
+        for (Trades trade : trades) {
+            if (Trades.isTradeCompatible(trade)) {
+                registerTradeOptions(commandDispatcher, trade);
+            }
         }
         commandDispatcher.register(Commands.literal("bartering_queue")
                 .then(

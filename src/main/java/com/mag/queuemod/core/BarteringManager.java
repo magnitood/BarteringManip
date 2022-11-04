@@ -51,7 +51,6 @@ public class BarteringManager {
     
     /**
      * This part is implemented like this instead of directly passing the ItemStack because from the enum because when 3 or more piglins trade together, the enum ItemStack is getting overwritten by Air
-     * @param index the index for the trade
      * @return Trade ItemStack wrapped in a List or null if empty or disabled
      */
     public static List<ItemStack> getTradeAsList(){
