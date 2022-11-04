@@ -5,10 +5,10 @@
   "name": "Bartering Manip",
   "description": "Mod to manipulate piglin bartering",
   "authors": [
-    "MaGNITud3"
+    "MaG_NITud3"
   ],
   "contact": {},
-  "license": "GPL-3.0",
+  "license": "WTFPL",
   "icon": "assets/queue/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -20,6 +20,7 @@
     "queue.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.8"
+    "fabricloader": ">=0.14.8",
+    "minecraft": ">=1.16"
   }
 }

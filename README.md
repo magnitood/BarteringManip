@@ -15,9 +15,7 @@ add - adds item (for example Ender Pearl) to the bartering queue. Optionally int
 
 reset - resets the queue
 
-enable - enables the queue
-
-disable - disables the queue
+toggle - to toggle queue on and off
 
 show - prints the queue in the console
 
@@ -63,4 +61,4 @@ If there are any bugs or you need help with the mod, you can do any of the follo
 
 ## Feature Requests
 
-Although this a very simple and basic mod, if you have any feature request in mind that may help improve this mod, you can DM them to me in Discord at MaG_NITud3#9311
+Although this a very simple and basic mod, if you have any feature request in mind that may help improve this mod, you can DM them to me in Discord at MaG_NITud3#9311 or open a new [issue](https://github.com/MaG-NITud3/BarteringManip/issues/new)
