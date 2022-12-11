@@ -25,7 +25,7 @@ public enum Trades {
     SOUL_SPEED_BOOK(ComplexItemStack.SOUL_SPEED_BOOK, "soul_speed_book", "1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
     SOUL_SPEED_BOOTS(ComplexItemStack.SOUL_SPEED_BOOTS, "soul_speed_boots", "1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
     POTION_OF_FIRE_RESISTANCE(ComplexItemStack.POTION_OF_FIRE_RESISTANCE, "potion_of_fire_resistance", "1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
-    SPLASH_POTION_OF_FIRE_RESISTANCE(ComplexItemStack.SPLASH_POTION_OF_FIRE_RESISTANCE, "1.16", "1.16.1", "splash_potion_of_fire_resistance", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
+    SPLASH_POTION_OF_FIRE_RESISTANCE(ComplexItemStack.SPLASH_POTION_OF_FIRE_RESISTANCE, "splash_potion_of_fire_resistance", "1.16.1", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
     NETHER_QUARTZ(new ItemStack(Items.QUARTZ, 12), "nether_quartz", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
     FIRE_CHARGE(new ItemStack(Items.FIRE_CHARGE, 1), "fire_charge", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
     GRAVEL(new ItemStack(Items.GRAVEL, 16), "gravel", "1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4","1.16.5", "1.17", "1.17.1", "1.18", "1.18.1", "1.18.2", "1.19", "1.19.1", "1.19.2"),
